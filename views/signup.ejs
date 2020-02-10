@@ -1,0 +1,26 @@
+<%- include('./template/header') -%>
+<%- include('./template/navbar') -%>
+<div class="container text-center">
+    <h3> Create Account  </h3>
+    <form action="/signup" method="post">
+        <input type="text" class="form-control" name="username" placeholder="Username"><br>
+        <input type="email" class="form-control" name="email" placeholder="E-mail"><br>
+        <input type="password" class="form-control" name="password" placeholder="Password"><br>
+        <input type="password" class="form-control" name="ConfirmPassword" placeholder="Confirm Password"><br>
+        <input type="submit" value="Create Account" class="btn btn-primary">
+    </form>
+    <br>
+    <%if(authError){%>
+    <p class="alert alert-danger">
+        <%=authError%>
+    </p>
+    <% }%>
+
+    <br>
+
+    <div>
+        Already have account ? <a href="/login">Create Account</a>
+    </div>
+</div>
+
+<%- include('./template/footer') -%>
